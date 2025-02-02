@@ -14,9 +14,18 @@ Brief instructions:
 7. copy the Arduino project to your Arduino sketchbook folder
 8. compile and upload
 
+The first time you run the program, it will be necessary to calibrate the touchscreen. This runs automatically.
+
 If you wish to modify the UI, install EEZ-Studio from https://www.envox.eu/studio/studio-introduction/.
 
-Note that the UI design is configured for a 320x480 pixel display. You will need to modify the design if your hardware differs from this.
+Note that the UI design is configured for a 320x480 pixel display. You will need to modify the layout if your hardware differs from this.
 
-The first time you run the program, it will be necessary to calibrate the touchscreen. This runs automatically.
+The summary workflow for amending the UI:
+
+1. make the desired changes in EEZ-Studio and save your changes
+2. click the build (spanner) icon
+3. copy the generated .c and .h files to the Arduino sketch folder
+4. edit these files and change any #include of <lvgl/lvgl.h> to just <lvgl.h>
+5. any new UI 'actions' (event handlers) will require a matching implementaton of the callback functions defined in actions.h
+6. recompile and upload
 
